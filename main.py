@@ -5,37 +5,38 @@ from pyqrcode import QRCode
 # Import the os module
 import os
 
-currentDir  = os.getcwd()
-print(currentDir)
+# Generate QR Code and store into custom folder
+def generateQRCode(link, folder='', name='default', png_scale=8, svg_scale=6):
+    dir = os.getcwd()
+    url = pyqrcode.create(link)
 
-# String which represents the QR code 
-linkedIn = 'https://www.linkedin.com/in/jesus-minjares-157a21195/'
-gitHub = 'https://github.com/jminjares4'
-links = 'https://linktr.ee/JesusMinjares'
+    path = dir + '/' + folder
+ 
+    if os.path.isdir(path) is True:
+        os.chdir(path)
+        url.svg(name+'.svg', scale=svg_scale)
+        url.png(name + ".png", scale=png_scale)
+        os.chdir(dir)
+    else:
+        os.mkdir(path)
+        os.chdir(path)
+        url.svg(name+'.svg', scale=svg_scale)
+        url.png(name + ".png", scale=png_scale)
+        os.chdir(dir)
 
-# Generate QR code 
-linkedIn_url = pyqrcode.create(linkedIn)
-gitHub_url = pyqrcode.create(gitHub)
-links_url = pyqrcode.create(links)
+    return "QR code stored in " + dir + "/" + folder
 
+if __name__ == '__main__':
+    linkedIn = 'https://www.linkedin.com/in/jesus-minjares-157a21195/'
+    gitHub = 'https://github.com/jminjares4'
+    linktree = 'https://linktr.ee/JesusMinjares'
 
-os.chdir(currentDir + '/LinkedIn')
-# Create and save the svg and png files
-linkedIn_url.svg('linkedIn.svg', scale = 8)
-linkedIn_url.png('linkedIn.png', scale = 6)
+    print(generateQRCode(link=linkedIn, folder="LinkedIn",
+                name="linkedIn", png_scale=8, svg_scale=6))
+    print(generateQRCode(link=gitHub, folder="GitHub",
+                name="gitHub", png_scale=8, svg_scale=6))
+    print(generateQRCode(link=linktree, folder="Linktree",
+                name="linktree", png_scale=8, svg_scale=6))
+    print("QR-Code are store in their corresponding directories!")
 
-os.chdir(currentDir + '/Link')
-# Create and save the svg and png files
-links_url.svg('links.svg', scale = 8)
-links_url.png('links.png', scale = 6)
-
-os.chdir(currentDir + '/GitHub')
-# Create and save the svg and png files
-gitHub_url.svg('gitHub.svg', scale = 8)
-gitHub_url.png('gitHub.png', scale = 6)
-
-os.chdir(currentDir)
-
-print("QR-Code are store in their corresponding directories!")
-
-
+    generateQRCode(link='https://google.com')
