@@ -9,15 +9,12 @@ pip install pyqrcode
 pip install pypng
 ~~~
 ## **Output**
-
-<img width="300" height ="300" src="QR-Code Test/GitHub/gitHub.png"> <br>
-  - *GitHub QR Code*
-
-<img width="300" height ="300" src="QR-Code Test/LinkedIn/linkedIn.png"> <br>
-  - *LinkedIn QR Code*
-
-<img width="300" height ="300" src="QR-Code Test/Linktree/linktree.png"> <br>
-  - *Linktree QR Code*
+- *GitHub QR Code*
+-   <img width="300" height ="300" src="QR-Code Test/GitHub/gitHub.png">
+- *LinkedIn QR Code*
+-   <img width="300" height ="300" src="QR-Code Test/LinkedIn/linkedIn.png">
+- *Linktree QR Code*
+-   <img width="300" height ="300" src="QR-Code Test/Linktree/linktree.png">
 
 ## Author:
 * Jesus Minjares
