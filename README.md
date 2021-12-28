@@ -29,6 +29,9 @@ pip install pypng
     <img width="300" height ="300" src="QR-Code Test/LinkedIn/linkedIn.png">
 - ***Linktree QR Code*** <br>
     <img width="300" height ="300" src="QR-Code Test/Linktree/linktree.png">
+    
+## **License**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Author:
 * Jesus Minjares
