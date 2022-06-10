@@ -46,7 +46,7 @@ if __name__ == "__main__":
     os.chdir(qr_code_path)  # change the directory
 
     # Different url to generate QR-Code
-    linkedIn = 'https://www.linkedin.com/in/jesus-minjares-157a21195/'
+    linkedIn = 'https://www.linkedin.com/in/jesusminjares/'
     gitHub = 'https://github.com/jminjares4'
     linktree = 'https://linktr.ee/JesusMinjares'
 
